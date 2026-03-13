@@ -41,7 +41,7 @@ EBS addresses this gap. Its single-file architecture means it can be shared as a
 
 Browser-based scientific computing tools have grown considerably in capability since the widespread adoption of WebAssembly and modern JavaScript engines [@smith2017]. Projects such as Pyodide bring full Python runtimes to the browser [@pyodide2021], and tools like Observable notebooks provide interactive data analysis environments. However, these platforms require either a network connection, a runtime download, or programming literacy on the part of the end user.
 
-Within chemometrics and polymer science specifically, the dominant software environments are MATLAB with the PLS Toolbox [@wise2006], R with packages such as `nnls` [@mullen2012], and Python's `scipy.optimize.nnls` [@virtanen2020]. Web-native implementations that integrate a solver, a curated domain database, and publication-ready export in a single redistributable file are not represented in the literature to the authors' knowledge.
+Within chemometrics and polymer science specifically, the dominant software environments are MATLAB with the PLS Toolbox [@wise2006], R with packages such as `nnls` [@mullen2012], and Python's `scipy.optimize.nnls` [@virtanen2020]. Web-native implementations that integrate a solver, a curated domain database, and publication-ready export in a single redistributable file are not represented in the literature to the author's knowledge.
 
 EBS occupies this niche by combining zero-dependency deployment with scientific rigour: the NNLS formulation is mathematically identical to Lawson–Hanson active-set implementations in established numerical libraries, and the chi-squared fit test follows standard goodness-of-fit practice [@press2007].
 
@@ -97,7 +97,7 @@ The 73-polymer database, covering 20 elements including heteroatoms (Si, P, Na, 
 
 # AI Usage Disclosure
 
-Portions of the EBS application code and documentation were developed with AI-assisted code generation tools. All mathematical formulations, algorithmic design decisions, database curation, and validation were performed and verified by the authors.
+Portions of the EBS application code and documentation were developed with AI-assisted code generation tools. All mathematical formulations, algorithmic design decisions, database curation, and validation were performed and verified by the author.
 
 # Acknowledgements
 
