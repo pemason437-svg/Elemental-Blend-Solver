@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "Elemental Blend Solver (EBS)"
+version: "8.0"
+date-released: "2026-03-01"
+abstract: >
+  A browser-native, zero-install Non-Negative Least Squares (NNLS) solver for
+  polymer elemental composition matching. Computes optimal mass-mixing fractions
+  of up to five source polymers whose combined elemental weight fractions best
+  approximate a target molecule. Supports 20 elements and a 73-polymer database.
+  Includes six graphical analysis views and eight advanced diagnostic tools.
+authors:
+  - family-names: Mason
+    given-names: Paul
+    email: pemason437@gmail.com
+repository-code: "https://github.com/pemason437-svg/Elemental-Blend-Solver"
+license: MIT
+keywords:
+  - non-negative least squares
+  - NNLS
+  - polymer blends
+  - elemental analysis
+  - chemometrics
+  - Lawson-Hanson algorithm
+  - recycling
+  - browser-based software
+references:
+  - type: article
+    title: "Elemental Blend Solver: A Browser-Native Non-Negative Least Squares Framework for Polymer Elemental Composition Reconstruction"
+    authors:
+      - family-names: Mason
+        given-names: Paul
+    journal: "Chemometrics and Intelligent Laboratory Systems"
+    year: forthcoming
+    notes: "Manuscript submitted for publication"
+  - type: article
+    title: "Elemental Blend Solver (EBS): A Browser-Based Non-Negative Least Squares Tool for Polymer Elemental Composition Matching"
+    authors:
+      - family-names: Mason
+        given-names: Paul
+    journal: "Journal of Open Source Software"
+    year: forthcoming
+    notes: "Manuscript submitted for publication"
