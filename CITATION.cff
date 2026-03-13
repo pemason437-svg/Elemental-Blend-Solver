@@ -4,6 +4,11 @@ type: software
 title: "Elemental Blend Solver (EBS)"
 version: "8.0"
 date-released: "2026-03-01"
+doi: "10.5281/zenodo.19006359"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19006359"
+    description: "Zenodo software archive DOI"
 abstract: >
   A browser-native, zero-install Non-Negative Least Squares (NNLS) solver for
   polymer elemental composition matching. Computes optimal mass-mixing fractions
