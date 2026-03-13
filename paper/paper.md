@@ -10,7 +10,7 @@ tags:
   - analytical chemistry
 authors:
   - name: Paul Mason
-    orcid: 0000-0000-0000-0000
+    orcid: 0009-0002-7818-1377
     affiliation: 1
 affiliations:
   - name: Independent Researcher, Cocoa, Florida, United States
