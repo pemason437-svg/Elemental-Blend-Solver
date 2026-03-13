@@ -101,20 +101,4 @@ Portions of the EBS application code and documentation were developed with AI-as
 
 # Acknowledgements
 
-The authors thank the open-source scientific computing community whose foundational work on NNLS algorithms [@lawson1974] and numerical methods [@press2007] underpins this software.
-
-# References
-
-Lawson, C. L., & Hanson, R. J. (1974). *Solving Least Squares Problems*. Prentice-Hall.
-
-Virtanen, P., Gommers, R., Oliphant, T. E., et al. (2020). SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. *Nature Methods*, 17, 261–272.
-
-Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. (2007). *Numerical Recipes: The Art of Scientific Computing* (3rd ed.). Cambridge University Press.
-
-Smith, A. M., Niemeyer, K. E., Katz, D. S., et al. (2017). Journal of Open Source Software (JOSS): design and first-year review. *PeerJ Computer Science*, 4, e147.
-
-Wise, B. M., Gallagher, N. B., Bro, R., Shaver, J. M., Windig, W., & Koch, R. S. (2006). *PLS_Toolbox 4.0 for use with MATLAB*. Eigenvector Research, Inc.
-
-Mullen, K., & van Stokkum, I. H. M. (2012). nnls: The Lawson-Hanson algorithm for non-negative least squares (NNLS). R package version 1.4.
-
-Pyodide Development Team (2021). Pyodide: Python for the browser. https://pyodide.org
+The author thanks the open-source scientific computing community whose foundational work on NNLS algorithms and numerical methods [@lawson1974; @press2007] underpins this software.
