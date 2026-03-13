@@ -1,4 +1,4 @@
-yamlname: Draft PDF
+name: Draft PDF
 on:
   push:
     paths:
@@ -22,4 +22,3 @@ jobs:
         with:
           name: paper
           path: paper/paper.pdf
-
