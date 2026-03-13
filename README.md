@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.txt)
 [![Version](https://img.shields.io/badge/version-8.0-green.svg)]()
 [![No Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)]()
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19006359.svg)](https://doi.org/10.5281/zenodo.19006359)
 ---
 
 ## What It Does
@@ -108,6 +108,10 @@ Validated across a 20-molecule test suite spanning:
 ## Citation
 
 If you use EBS in your research, please cite it. A `Cite this repository` button is available at the top of this page (powered by `CITATION.cff`).
+
+**Software archive (cite this for the code itself):**
+
+> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 8.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.19006359
 
 The following journal papers are currently under review. This section will be updated with full references and DOIs upon acceptance:
 
