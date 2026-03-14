@@ -2,10 +2,11 @@
 
 **A browser-native, zero-install NNLS solver for polymer elemental composition matching.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.txt)
-[![Version](https://img.shields.io/badge/version-8.0-green.svg)]()
-[![No Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver/blob/main/LICENSE.txt)
+[![Version](https://img.shields.io/badge/version-8.0-blue.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
+[![No Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19006359.svg)](https://doi.org/10.5281/zenodo.19006359)
+
 ---
 
 ## What It Does
@@ -13,9 +14,10 @@
 The Elemental Blend Solver computes the optimal mass-mixing fractions of up to **five source polymers** whose combined elemental weight composition best matches a chosen **target molecule**. It solves a constrained Non-Negative Least Squares (NNLS) optimisation problem using the Lawson–Hanson active-set algorithm, guaranteeing non-negative fractions that sum to exactly 1.0.
 
 Typical use cases include:
-- **Plastics recycling** — matching an unknown recyclate's elemental fingerprint (from CHN/XRF analysis) against a polymer library
-- **Process simulation** — constructing a polymer blend recipe that reproduces a target feedstock composition
-- **Analytical chemistry education** — visualising constrained optimisation and convex-hull feasibility
+
+* **Plastics recycling** — matching an unknown recyclate's elemental fingerprint (from CHN/XRF analysis) against a polymer library
+* **Process simulation** — constructing a polymer blend recipe that reproduces a target feedstock composition
+* **Analytical chemistry education** — visualising constrained optimisation and convex-hull feasibility
 
 ---
 
@@ -33,16 +35,18 @@ That's it. No installation, no npm, no Python, no internet connection required. 
 ## Features
 
 ### Solver
-- Non-Negative Least Squares via Lawson–Hanson active-set algorithm
-- Up to 5 source polymers simultaneously
-- **20 tracked elements:** C, H, O, N, Cl, S, P, Si, F, Br, I, Na, K, Mg, Ca, Fe, Al, B, Se, Zn
-- **73-polymer database** covering commodity thermoplastics, engineering polymers, thermosets, and specialty materials
-- 8 target presets + custom molecular formula entry
-- Real-time results — updates instantly as you change any input
+
+* Non-Negative Least Squares via Lawson–Hanson active-set algorithm
+* Up to 5 source polymers simultaneously
+* **20 tracked elements:** C, H, O, N, Cl, S, P, Si, F, Br, I, Na, K, Mg, Ca, Fe, Al, B, Se, Zn
+* **73-polymer database** covering commodity thermoplastics, engineering polymers, thermosets, and specialty materials
+* 8 target presets + custom molecular formula entry
+* Real-time results — updates instantly as you change any input
 
 ### Graphical Analysis (6 views)
+
 | View | Description |
-|------|-------------|
+| --- | --- |
 | Radar Chart | Achieved vs. target elemental profile overlay |
 | Scatter Plot | Source polymer positions in two-element composition space |
 | Build-Up Chart | Per-source contribution to each element |
@@ -51,8 +55,9 @@ That's it. No installation, no npm, no Python, no internet connection required. 
 | Convergence Plot | SSR vs. Lawson–Hanson iteration count |
 
 ### Advanced Diagnostic Tools (8 tools)
+
 | Tool | Description |
-|------|-------------|
+| --- | --- |
 | Monte Carlo Sensitivity | Propagates target uncertainty to mixing-fraction confidence intervals (1000 replicates) |
 | Distance-to-Hull | L2 distance from target to nearest point on source convex hull |
 | Substitution Recommender | Scans all 73 database polymers for single-polymer replacements that reduce SSR |
@@ -63,9 +68,10 @@ That's it. No installation, no npm, no Python, no internet connection required. 
 | Exhaustive Optimal Blend Search | Enumerates all C(73, n) combinations to find the globally optimal source set |
 
 ### Export
-- **Word Report (.docx)** — 8-section formal report with all charts embedded as SVG
-- **SVG Charts** — all 6 graphical views as standalone SVG files
-- Entirely client-side — no server required
+
+* **Word Report (.docx)** — 8-section formal report with all charts embedded as SVG
+* **SVG Charts** — all 6 graphical views as standalone SVG files
+* Entirely client-side — no server required
 
 ---
 
@@ -73,11 +79,19 @@ That's it. No installation, no npm, no Python, no internet connection required. 
 
 For a blend of *n* source polymers with mass fractions **f** = (f₁, ..., fₙ)ᵀ, the achieved elemental composition is **Af = b**, where **A** is the elemental weight-fraction matrix and **b** is the target vector. The problem is:
 
-> minimise ‖**Af** − **b**‖²  subject to  fᵢ ≥ 0 ∀i,  Σfᵢ = 1
+> minimise ‖**Af** − **b**‖² subject to fᵢ ≥ 0 ∀i, Σfᵢ = 1
 
 The sum constraint is incorporated as a weighted penalty row (λ = 10), and the resulting pure NNLS system is solved by the Lawson–Hanson algorithm.
 
-Full mathematical derivation: see [`docs/math_reference.md`](docs/math_reference.md) or the published paper (see [Citation](#citation)).
+Full mathematical derivation, annotated source code listings, and a complete user guide are in the documentation below.
+
+---
+
+## Documentation
+
+| Document | Description |
+| --- | --- |
+| **[EBS\_User\_Guide\_v8\_complete.docx](docs/EBS_User_Guide_v8_complete.docx)** | Complete technical reference and user guide (153 pages). Covers quick-start, all UI features, full mathematical framework with annotated JavaScript code listings, advanced tool documentation, troubleshooting, glossary, and software verification report. |
 
 ---
 
@@ -85,13 +99,13 @@ Full mathematical derivation: see [`docs/math_reference.md`](docs/math_reference
 
 ```
 Elemental-Blend-Solver/
-├── molecular_solver_v8.html   ← The application (open this in your browser)
-├── LICENSE.txt                ← MIT Licence
-├── README.md                  ← This file
-├── CITATION.cff               ← Machine-readable citation metadata
-└── docs/
-    ├── user_guide.md          ← Full user guide and feature reference
-    └── math_reference.md      ← Complete NNLS mathematical derivation
+├── molecular_solver_v8.html        ← The application (open this in your browser)
+├── LICENSE.txt                     ← MIT Licence
+├── README.md                       ← This file
+├── CITATION.cff                    ← Machine-readable citation metadata
+├── docs/
+│   └── EBS_User_Guide_v8_complete.docx  ← Complete user guide and technical reference
+└── paper/                          ← Journal paper source files
 ```
 
 ---
@@ -99,9 +113,12 @@ Elemental-Blend-Solver/
 ## Validation
 
 Validated across a 20-molecule test suite spanning:
-- Targets **within** the convex hull of sources → SSR ≤ 10⁻¹⁰ (exact recovery confirmed)
-- Targets **outside** the hull → minimum-SSR approximation with physically valid fractions
-- Sum constraint ‖Σfᵢ − 1‖ < 10⁻⁸ across all test cases
+
+* Targets **within** the convex hull of sources → SSR ≤ 10⁻¹⁰ (exact recovery confirmed)
+* Targets **outside** the hull → minimum-SSR approximation with physically valid fractions
+* Sum constraint ‖Σfᵢ − 1‖ < 10⁻⁸ across all test cases
+
+Full validation details, including 232 automated tests and 12 interactive acceptance tests, are documented in Section 13 of the user guide.
 
 ---
 
@@ -111,7 +128,7 @@ If you use EBS in your research, please cite it. A `Cite this repository` button
 
 **Software archive (cite this for the code itself):**
 
-> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 8.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.19006359
+> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 8.0) [Software]. Zenodo. <https://doi.org/10.5281/zenodo.19006359>
 
 The following journal papers are currently under review. This section will be updated with full references and DOIs upon acceptance:
 
@@ -131,7 +148,7 @@ Copyright © 2026 Paul Mason.
 ## Contact
 
 **Paul Mason** — Independent Researcher  
-📧 pemason437@gmail.com  
-🔗 https://github.com/pemason437-svg/Elemental-Blend-Solver
+📧 [pemason437@gmail.com](mailto:pemason437@gmail.com)  
+🔗 <https://github.com/pemason437-svg/Elemental-Blend-Solver>
 
 Bug reports and feature requests are welcome via the [issue tracker](https://github.com/pemason437-svg/Elemental-Blend-Solver/issues).
