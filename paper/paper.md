@@ -15,7 +15,7 @@ authors:
 affiliations:
   - name: Independent Researcher, Cocoa, Florida, United States
     index: 1
-date: March 2026
+date: 16 March 2026
 bibliography: paper.bib
 repository-code: 'https://github.com/pemason437-svg/Elemental-Blend-Solver'
 archive-doi: 'https://doi.org/10.5281/zenodo.19006359'
@@ -43,7 +43,7 @@ Browser-based scientific computing tools have grown considerably in capability s
 
 Within chemometrics and polymer science specifically, the dominant software environments are MATLAB with the PLS Toolbox [@wise2006], R with packages such as `nnls` [@mullen2012], and Python's `scipy.optimize.nnls` [@virtanen2020]. Web-native implementations that integrate a solver, a curated domain database, and publication-ready export in a single redistributable file are not represented in the literature to the author's knowledge.
 
-EBS occupies this niche by combining zero-dependency deployment with scientific rigour: the NNLS formulation is mathematically identical to Lawson–Hanson active-set implementations in established numerical libraries, and the chi-squared fit test follows standard goodness-of-fit practice [@press2007].
+EBS occupies this niche by combining zero-dependency deployment with scientific rigour: the NNLS formulation is mathematically identical to Lawson–Hanson active-set implementations in established numerical libraries [@bro1997], and the chi-squared fit test follows standard goodness-of-fit practice [@press2007]. Contributing to an existing general-purpose library would not replicate this capability, as no such library bundles a curated polymer database, domain-specific diagnostics, and a zero-install browser interface in a single distributable artefact.
 
 # Software Design
 
@@ -60,6 +60,8 @@ The sum-to-unity constraint is incorporated as a heavily weighted extra row appe
 $$\tilde{\mathbf{A}} = \begin{pmatrix} \mathbf{A} \\ \lambda \mathbf{1}^\top \end{pmatrix}, \quad \tilde{\mathbf{b}} = \begin{pmatrix} \mathbf{b} \\ \lambda \end{pmatrix}$$
 
 The augmented system is solved by the Lawson–Hanson active-set algorithm [@lawson1974], which iteratively identifies the active (non-zero) set of source polymers and solves a reduced unconstrained least-squares problem on each iteration. Version 8 applies this unified solver to all system sizes — underdetermined, square, and overdetermined — replacing the earlier multi-method approach of previous versions.
+
+A key design trade-off in this architecture is the use of a penalty-based equality constraint rather than a true constrained optimisation framework. This choice allows the full Lawson–Hanson algorithm to be implemented in pure JavaScript without external dependencies, at the cost of requiring the penalty weight $\lambda$ to be large enough to enforce the sum constraint without ill-conditioning the augmented matrix. Empirical testing across the 73-polymer database confirmed that $\lambda = 10$ provides adequate enforcement across all standard blend configurations.
 
 ## Architecture
 
@@ -91,13 +93,13 @@ EBS generates a structured eight-section Word report (`.docx`) containing all so
 
 # Research Impact Statement
 
-EBS was developed to support polymer blend characterisation in the context of recycling stream reconstruction, where CHN/XRF elemental analysis of an unknown material must be matched against a library of candidate polymers. The tool is directly applicable to: (1) plastics recycling and sorting research, (2) quality control in polymer compounding, (3) educational demonstrations of constrained least-squares optimisation in analytical chemistry courses, and (4) any domain requiring elemental fingerprint matching, including geochemistry, food science, and environmental monitoring.
+EBS was developed to support polymer blend characterisation in the context of recycling stream reconstruction, where CHN/XRF elemental analysis of an unknown material must be matched against a library of candidate polymers. The global plastic waste problem — with tens of millions of tonnes entering the environment annually [@jambeck2015] — motivates improved automated sorting and compositional identification tools of exactly this kind. The tool is directly applicable to: (1) plastics recycling and sorting research, (2) quality control in polymer compounding, (3) educational demonstrations of constrained least-squares optimisation in analytical chemistry courses, and (4) any domain requiring elemental fingerprint matching, including geochemistry, food science, and environmental monitoring.
 
-The 73-polymer database, covering 20 elements including heteroatoms (Si, P, Na, B, Br, I, K, Mg, Ca, Fe, Al, Se, Zn) not present in earlier versions, substantially broadens applicability beyond the C/H/O/N/Cl scope of most existing polymer analysis tools. The exhaustive blend search and substitution recommender tools support systematic database-driven discovery workflows not available in general-purpose numerical libraries.
+The software archive at Zenodo [@mason2026software] provides a citable, versioned record of the v8.0 release. The 73-polymer database, covering 20 elements including heteroatoms (Si, P, Na, B, Br, I, K, Mg, Ca, Fe, Al, Se, Zn) not commonly present in earlier polymer analysis tools, substantially broadens applicability beyond the C/H/O/N/Cl scope of most existing tools. The exhaustive blend search and substitution recommender tools support systematic database-driven discovery workflows not available in general-purpose numerical libraries.
 
 # AI Usage Disclosure
 
-Portions of the EBS application code and documentation were developed with AI-assisted code generation tools. All mathematical formulations, algorithmic design decisions, database curation, and validation were performed and verified by the author.
+Portions of the EBS application code and documentation were developed with AI-assisted code generation tools (GitHub Copilot and Claude). All mathematical formulations, algorithmic design decisions, database curation, and validation were performed and verified by the author. The author reviewed and edited all AI-assisted outputs.
 
 # Acknowledgements
 
