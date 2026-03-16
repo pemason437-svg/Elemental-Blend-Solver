@@ -1,4 +1,4 @@
-# Elemental Blend Solver (EBS) v8
+[# Elemental Blend Solver (EBS) v8
 
 **A browser-native, zero-install NNLS solver for polymer elemental composition matching.**
 
@@ -152,3 +152,4 @@ Copyright © 2026 Paul Mason.
 🔗 <https://github.com/pemason437-svg/Elemental-Blend-Solver>
 
 Bug reports and feature requests are welcome via the [issue tracker](https://github.com/pemason437-svg/Elemental-Blend-Solver/issues).
+](https://github.com/pemason437-svg/Elemental-Blend-Solver/tree/main/docs)
