@@ -1,4 +1,4 @@
-[# Elemental Blend Solver (EBS) v8
+# Elemental Blend Solver (EBS) v8
 
 **A browser-native, zero-install NNLS solver for polymer elemental composition matching.**
 
@@ -92,6 +92,7 @@ Full mathematical derivation, annotated source code listings, and a complete use
 | Document | Description |
 | --- | --- |
 | **[EBS\_User\_Guide\_v8\_complete.docx](docs/EBS_User_Guide_v8_complete.docx)** | Complete technical reference and user guide (153 pages). Covers quick-start, all UI features, full mathematical framework with annotated JavaScript code listings, advanced tool documentation, troubleshooting, glossary, and software verification report. |
+| **[Math\_used\_in\_the\_molecular\_solver\_code.docx](docs/Math_used_in_the_molecular_solver_code.docx)** | Detailed mathematical derivations underpinning the solver code. Covers the NNLS formulation, Lawson–Hanson active-set algorithm, sum constraint penalty, and all supporting calculations used in the implementation. |
 
 ---
 
@@ -104,7 +105,8 @@ Elemental-Blend-Solver/
 ├── README.md                       ← This file
 ├── CITATION.cff                    ← Machine-readable citation metadata
 ├── docs/
-│   └── EBS_User_Guide_v8_complete.docx  ← Complete user guide and technical reference
+│   ├── EBS_User_Guide_v8_complete.docx              ← Complete user guide and technical reference
+│   └── Math_used_in_the_molecular_solver_code.docx  ← Mathematical derivations for the solver code
 └── paper/                          ← Journal paper source files
 ```
 
@@ -152,4 +154,3 @@ Copyright © 2026 Paul Mason.
 🔗 <https://github.com/pemason437-svg/Elemental-Blend-Solver>
 
 Bug reports and feature requests are welcome via the [issue tracker](https://github.com/pemason437-svg/Elemental-Blend-Solver/issues).
-](https://github.com/pemason437-svg/Elemental-Blend-Solver/tree/main/docs)
