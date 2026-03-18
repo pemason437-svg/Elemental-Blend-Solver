@@ -1,11 +1,11 @@
-# Elemental Blend Solver (EBS) v8
+# Elemental Blend Solver (EBS) v8.0.3
 
 **A browser-native, zero-install NNLS solver for polymer elemental composition matching.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver/blob/main/LICENSE.txt)
-[![Version](https://img.shields.io/badge/version-8.0-blue.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
+[![Version](https://img.shields.io/badge/version-8.0.3-blue.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
 [![No Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19006359.svg)](https://doi.org/10.5281/zenodo.19006359)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19075263.svg)](https://doi.org/10.5281/zenodo.19075263)
 
 ---
 
@@ -23,7 +23,7 @@ Typical use cases include:
 
 ## How to Run
 
-1. Download **`molecular_solver_v8.html`** to any folder on your computer
+1. Download **`molecular_solver_v8_0_3.html`** to any folder on your computer
 2. Double-click it to open in your browser
 
 That's it. No installation, no npm, no Python, no internet connection required. The entire application — solver, database, charts, and export — is contained in the single HTML file.
@@ -58,14 +58,14 @@ That's it. No installation, no npm, no Python, no internet connection required. 
 
 | Tool | Description |
 | --- | --- |
-| Monte Carlo Sensitivity | Propagates target uncertainty to mixing-fraction confidence intervals (1000 replicates) |
+| Monte Carlo Sensitivity | Propagates source-composition uncertainty to mixing-fraction confidence intervals (2,000 replicates, σ = 2% multiplicative noise) |
 | Distance-to-Hull | L2 distance from target to nearest point on source convex hull |
 | Substitution Recommender | Scans all 73 database polymers for single-polymer replacements that reduce SSR |
 | Leave-One-Out Importance | SSR increase when each active source is removed |
-| Global Decomposability Score | [0,1] scalar — how well the source set spans the target |
-| PCA Database Coverage Map | All 73 polymers + target projected onto 2D PCA space |
+| Global Decomposability Score | Dimensionless [0, 1] accept/reject metric: GDS = max(0, 1 − RMSE/‖**b**‖₂). GDS ≥ 0.97 excellent; 0.92–0.97 acceptable; 0.80–0.92 marginal; < 0.80 poor |
+| PCA Database Coverage Map | All 73 polymers + target projected onto 2D PCA space with convex hull of active sources |
 | Ternary SSR Contour | Heat-map of the error surface over the full 3-source simplex (3-source mode) |
-| Exhaustive Optimal Blend Search | Enumerates all C(73, n) combinations to find the globally optimal source set |
+| Exhaustive Optimal Blend Search | Enumerates all C(55, n) eligible combinations to find the globally optimal source set (18 polymers excluded for foreign elements) |
 
 ### Export
 
@@ -91,8 +91,8 @@ Full mathematical derivation, annotated source code listings, and a complete use
 
 | Document | Description |
 | --- | --- |
-| **[EBS\_User\_Guide\_v8\_complete.docx](docs/EBS_User_Guide_v8_complete.docx)** | Complete technical reference and user guide (153 pages). Covers quick-start, all UI features, full mathematical framework with annotated JavaScript code listings, advanced tool documentation, troubleshooting, glossary, and software verification report. |
-| **[Math\_used\_in\_the\_molecular\_solver\_code.docx](docs/Math_used_in_the_molecular_solver_code.docx)** | Detailed mathematical derivations underpinning the solver code. Covers the NNLS formulation, Lawson–Hanson active-set algorithm, sum constraint penalty, and all supporting calculations used in the implementation. |
+| **[EBS\_User\_Guide\_v8\_0\_3.docx](docs/EBS_User_Guide_v8_0_3.docx)** | Complete technical reference and user guide. Covers quick-start, all UI features, full mathematical framework with annotated JavaScript code listings, advanced tool documentation (including corrected χ² df = m − n_active and GDS formula), troubleshooting, glossary, and software verification report. |
+| **[Math\_used\_in\_the\_molecular\_solver\_code\_v8\_0\_3.docx](docs/Math_used_in_the_molecular_solver_code_v8_0_3.docx)** | Detailed mathematical derivations underpinning the solver code. Covers the NNLS formulation, Lawson–Hanson active-set algorithm, sum constraint penalty, corrected chi-squared degrees of freedom (df = m − n_active), Global Decomposability Score (GDS = max(0, 1 − RMSE/‖b‖₂)), and all supporting calculations used in the implementation. |
 
 ---
 
@@ -100,13 +100,13 @@ Full mathematical derivation, annotated source code listings, and a complete use
 
 ```
 Elemental-Blend-Solver/
-├── molecular_solver_v8.html        ← The application (open this in your browser)
+├── molecular_solver_v8_0_3.html    ← The application (open this in your browser)
 ├── LICENSE.txt                     ← MIT Licence
 ├── README.md                       ← This file
 ├── CITATION.cff                    ← Machine-readable citation metadata
 ├── docs/
-│   ├── EBS_User_Guide_v8_complete.docx              ← Complete user guide and technical reference
-│   └── Math_used_in_the_molecular_solver_code.docx  ← Mathematical derivations for the solver code
+│   ├── EBS_User_Guide_v8_0_3.docx                        ← Complete user guide and technical reference
+│   └── Math_used_in_the_molecular_solver_code_v8_0_3.docx ← Mathematical derivations for the solver code
 └── paper/                          ← Journal paper source files
 ```
 
@@ -130,7 +130,7 @@ If you use EBS in your research, please cite it. A `Cite this repository` button
 
 **Software archive (cite this for the code itself):**
 
-> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 8.0) [Software]. Zenodo. <https://doi.org/10.5281/zenodo.19006359>
+> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 8.0.3) [Software]. Zenodo. <https://doi.org/10.5281/zenodo.19075263>
 
 The following journal papers are currently under review. This section will be updated with full references and DOIs upon acceptance:
 
