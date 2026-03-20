@@ -1,11 +1,11 @@
-# Elemental Blend Solver (EBS) v9.0.0
+# Elemental Blend Solver (EBS) v9.0.1
 
 **A browser-native, zero-install NNLS solver for polymer elemental composition matching.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver/blob/main/LICENSE.txt)
-[![Version](https://img.shields.io/badge/version-9.0.0-blue.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
+[![Version](https://img.shields.io/badge/version-9.0.1-blue.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
 [![No Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19006884.svg)](https://doi.org/10.5281/zenodo.19006884)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19136224.svg)](https://doi.org/10.5281/zenodo.19136224)
 
 ---
 
@@ -23,12 +23,34 @@ Typical use cases include:
 
 ## How to Run
 
-1. Download **`molecular_solver_v9_0_0.html`** to any folder on your computer
+1. Download **`molecular_solver_v9_0_1.html`** to any folder on your computer
 2. Double-click it to open in your browser
 
 That's it. No installation, no npm, no Python, no internet connection required. The entire application — solver, database, charts, and export — is contained in the single HTML file.
 
 **Tested browsers:** Chrome ≥ 80, Edge ≥ 80, Firefox ≥ 78, Safari ≥ 14
+
+---
+
+## What's New in v9.0.1
+
+### Bug fixes
+
+- **PCA axis bias fixed** — PCA axes are now computed from source polymers only. Previously the covariance matrix included the target and all 73 DB polymers, which pulled the axes toward unusual target elements (e.g. Cl+N in Choline Chloride) and caused the source hull to appear to wrap around the target in 2D even when no solution existed.
+- **Star push geometry fixed** — A sign error in the ray–hull intersection formula (Cramér's rule, `sEdge` denominator) caused the push to silently fail, leaving the star inside the hull. Corrected formula: `sEdge = (ux*(ay−cy) − (ax−cx)*uy) / (−denom)`.
+- **Annotation text corrected** — Annotation box text changed from *"Target (★) lies outside dashed hull"* to *"If Target (★) lies outside dashed hull"*.
+
+### New feature — 3-state target star
+
+The star in the PCA scatter plot now encodes global blend feasibility using colour and position, driven by NNLS over all 73 database polymers:
+
+- 🟢 **Green, inside hull** — exact solution found with the current source selection
+- 🟡 **Amber, inside hull** — an exact solution exists in the 73-polymer database; current sources cannot achieve it — try substituting sources
+- 🔴 **Red, outside hull** — no combination of any database polymer can reproduce this target's elemental composition
+
+### Performance
+
+- `runGlobalDecomposability` is now cached on `lastResult` at solve time rather than recomputed on every chart render, eliminating a redundant 73-polymer NNLS call on each tab switch.
 
 ---
 
@@ -138,7 +160,7 @@ Full mathematical derivation, annotated source code listings, and a complete use
 
 ```
 Elemental-Blend-Solver/
-├── molecular_solver_v9_0_0.html    ← The application (open this in your browser)
+├── molecular_solver_v9_0_1.html    ← The application (open this in your browser)
 ├── LICENSE.txt                     ← MIT Licence
 ├── README.md                       ← This file
 ├── CITATION.cff                    ← Machine-readable citation metadata
@@ -168,7 +190,7 @@ If you use EBS in your research, please cite it. A `Cite this repository` button
 
 **Software archive (cite this for the code itself):**
 
-> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 9.0.0) [Software]. Zenodo. <https://doi.org/10.5281/zenodo.19006884>
+> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 9.0.1) [Software]. Zenodo. <https://doi.org/10.5281/zenodo.19136224>
 
 The following journal papers are currently under review. This section will be updated with full references and DOIs upon acceptance:
 
