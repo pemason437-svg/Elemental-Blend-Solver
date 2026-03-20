@@ -2,23 +2,34 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
 type: software
 title: "Elemental Blend Solver (EBS)"
-version: "8.0"
-date-released: "2026-03-01"
-doi: "10.5281/zenodo.19006359"
+version: "9.0.0"
+date-released: "2026-03-19"
+doi: "10.5281/zenodo.19006884"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.19006359"
-    description: "Zenodo software archive DOI"
+    value: "10.5281/zenodo.19006884"
+    description: "Zenodo software archive DOI (v9.0.0)"
 abstract: >
   A browser-native, zero-install Non-Negative Least Squares (NNLS) solver for
   polymer elemental composition matching. Computes optimal mass-mixing fractions
   of up to five source polymers whose combined elemental weight fractions best
   approximate a target molecule. Supports 20 elements and a 73-polymer database.
-  Includes six graphical analysis views and eight advanced diagnostic tools.
+  Includes seven graphical analysis views and eight advanced diagnostic tools.
+  Version 9.0.0 introduces a publication-quality graphical overhaul: the PCA
+  scatter plot now projects all 73 database polymers as a background cloud with
+  stable database-wide PCA axes; the radar chart is redesigned to match the
+  companion paper figures; a new Composition chart displays target vs achieved
+  elemental bars with foreign-element annotation; and the Monte Carlo SSR
+  histogram uses statistically meaningful P5/P95 coloring. Bug fixes correct
+  the DGEBA polymer formula (C21H24O4), the Phenol-Formaldehyde repeat unit
+  (C7H6O), the selenium measurement uncertainty (sigma = 0.004), and the
+  Leave-One-Out classification thresholds (greater than 10x / 1-10x / less
+  than 1x SSR increase).
 authors:
   - family-names: Mason
     given-names: Paul
     email: pemason437@gmail.com
+    orcid: "https://orcid.org/0009-0002-7818-1377"
 repository-code: "https://github.com/pemason437-svg/Elemental-Blend-Solver"
 license: MIT
 keywords:
