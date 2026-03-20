@@ -2,10 +2,13 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
 type: software
 title: "Elemental Blend Solver (EBS)"
-version: "9.0.0"
-date-released: "2026-03-19"
-doi: "10.5281/zenodo.19006884"
+version: "9.0.1"
+date-released: "2026-03-20"
+doi: "10.5281/zenodo.19136224"
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19136224"
+    description: "Zenodo software archive DOI (v9.0.1)"
   - type: doi
     value: "10.5281/zenodo.19006884"
     description: "Zenodo software archive DOI (v9.0.0)"
@@ -15,16 +18,16 @@ abstract: >
   of up to five source polymers whose combined elemental weight fractions best
   approximate a target molecule. Supports 20 elements and a 73-polymer database.
   Includes seven graphical analysis views and eight advanced diagnostic tools.
-  Version 9.0.0 introduces a publication-quality graphical overhaul: the PCA
-  scatter plot now projects all 73 database polymers as a background cloud with
-  stable database-wide PCA axes; the radar chart is redesigned to match the
-  companion paper figures; a new Composition chart displays target vs achieved
-  elemental bars with foreign-element annotation; and the Monte Carlo SSR
-  histogram uses statistically meaningful P5/P95 coloring. Bug fixes correct
-  the DGEBA polymer formula (C21H24O4), the Phenol-Formaldehyde repeat unit
-  (C7H6O), the selenium measurement uncertainty (sigma = 0.004), and the
-  Leave-One-Out classification thresholds (greater than 10x / 1-10x / less
-  than 1x SSR increase).
+  Version 9.0.1 fixes a critical visual bug in the PCA Coverage Map where the
+  target star was incorrectly placed inside the source convex hull for compounds
+  with no exact solution. Introduces a 3-state star colour system driven by
+  global NNLS over all 73 database polymers: green = exact match found with
+  current sources; amber = exact solution exists in the database but not with
+  current source selection; red = no database solution possible, star pushed
+  outside the hull. Also fixes PCA axis bias caused by including the target in
+  the covariance matrix, and corrects a sign error in the ray-hull intersection
+  formula (Cramers rule, sEdge denominator) that prevented the star from being
+  pushed outside the hull.
 authors:
   - family-names: Mason
     given-names: Paul
