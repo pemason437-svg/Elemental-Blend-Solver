@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver/blob/main/LICENSE.txt)
 [![Version](https://img.shields.io/badge/version-9.0.0-blue.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
 [![No Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19075263.svg)](https://doi.org/10.5281/zenodo.19075263)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19006884.svg)](https://doi.org/10.5281/zenodo.19006884)
 
 ---
 
@@ -168,7 +168,7 @@ If you use EBS in your research, please cite it. A `Cite this repository` button
 
 **Software archive (cite this for the code itself):**
 
-> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 9.0.0) [Software]. Zenodo. <https://doi.org/10.5281/zenodo.19075263>
+> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 9.0.0) [Software]. Zenodo. <https://doi.org/10.5281/zenodo.19006884>
 
 The following journal papers are currently under review. This section will be updated with full references and DOIs upon acceptance:
 
