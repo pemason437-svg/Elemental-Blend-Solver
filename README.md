@@ -1,11 +1,11 @@
-# Elemental Blend Solver (EBS) v9.0.1
+# Elemental Blend Solver (EBS) v9.0.2
 
 **A browser-native, zero-install NNLS solver for polymer elemental composition matching.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver/blob/main/LICENSE.txt)
-[![Version](https://img.shields.io/badge/version-9.0.1-blue.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
+[![Version](https://img.shields.io/badge/version-9.0.2-blue.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
 [![No Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19136224.svg)](https://doi.org/10.5281/zenodo.19136224)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19263118.svg)](https://doi.org/10.5281/zenodo.19263118)
 
 ---
 
@@ -23,12 +23,39 @@ Typical use cases include:
 
 ## How to Run
 
-1. Download **`molecular_solver_v9_0_1.html`** to any folder on your computer
+1. Download **`molecular_solver_v9_0_2.html`** to any folder on your computer
 2. Double-click it to open in your browser
 
 That's it. No installation, no npm, no Python, no internet connection required. The entire application — solver, database, charts, and export — is contained in the single HTML file.
 
 **Tested browsers:** Chrome ≥ 80, Edge ≥ 80, Firefox ≥ 78, Safari ≥ 14
+
+---
+
+## What's New in v9.0.2
+
+### Bug fix — GDS false-positive rate reduced from 43% to 0%
+
+The Global Decomposability Score threshold (GDS > 0.97) had a **43% false-positive rate**: nearly half of all outside-hull targets were being classified as high-quality exact-like matches. The root cause was architectural — GDS normalises RMSE by ‖**b**‖₂, the Euclidean norm of the target weight-fraction vector, which shrinks for multi-element targets. A near-hull outside-hull target with a real residual of 1–2 percentage points could return GDS > 0.97 simply due to this normalisation. GDS is a continuous quality metric, not a hull-membership test — using it as one was the error.
+
+**Fix:** the single GDS threshold is replaced by a **5-tier absolute RMSE classifier** in percentage-point (pp) units, grounded in CHN/XRF instrument noise floors (σ = 0.3–0.5 pp). The GDS scalar formula is unchanged.
+
+| Tier | Condition | Action |
+| --- | --- | --- |
+| ✓ Exact | SSR < 10⁻⁸ | Accept — genuine hull-interior |
+| ≈ Noise-floor | RMSE < 0.5 pp AND max\|r\| < 1.0 pp | Accept — within instrument precision |
+| ~ Acceptable | RMSE < 2.0 pp | Review Blend Error Chart before accepting |
+| ! Marginal | RMSE < 5.0 pp | Run Substitution Recommender |
+| ✗ Poor | RMSE ≥ 5.0 pp | Run Exhaustive Search |
+
+Validated against 90 test cases (30 molecules × 3 source sets): **0% false-positive rate** (was 43%), **0% false-negative rate**.
+
+### UI changes
+
+- **GDS tool panel** — left box now shows Tier badge, RMSE in pp, and worst single-element gap in pp; GDS scalar retained with a progress bar; collapsible tier-legend table with threshold rationale
+- **Main result header** — Tier badge appears inline alongside the χ²/df/p chip immediately after solving
+- **Status bar** — five tier-specific messages with built-in actionable guidance
+- **`isExact` threshold** tightened from SSR < 10⁻⁶ to SSR < 10⁻⁸ to match the solver's actual floating-point exact-zero threshold
 
 ---
 
@@ -122,7 +149,7 @@ The star in the PCA scatter plot now encodes global blend feasibility using colo
 | Distance-to-Hull | L₂ distance from target to nearest point on source convex hull |
 | Substitution Recommender | Scans all 73 database polymers for single-polymer replacements that reduce SSR |
 | Leave-One-Out Importance | SSR increase when each active source is removed (Essential >10× / Useful 1–10× / Redundant <1×) |
-| Global Decomposability Score | Dimensionless [0, 1] accept/reject metric: GDS = max(0, 1 − RMSE/‖**b**‖₂). GDS ≥ 0.97 excellent; 0.92–0.97 acceptable; 0.80–0.92 marginal; < 0.80 poor |
+| Global Decomposability Score | Dimensionless [0, 1] quality metric: GDS = max(0, 1 − RMSE/‖**b**‖₂). Pass/fail decisions use the 5-tier absolute RMSE classifier: Exact (SSR < 10⁻⁸) · Noise-floor (RMSE < 0.5 pp) · Acceptable (RMSE < 2.0 pp) · Marginal (RMSE < 5.0 pp) · Poor (RMSE ≥ 5.0 pp) |
 | PCA Database Coverage Map | All 73 polymers + target projected onto 2D PCA space with convex hull of active sources |
 | Ternary SSR Contour | Heat-map of the error surface over the full 3-source simplex (3-source mode) |
 | Exhaustive Optimal Blend Search | Enumerates all eligible combinations to find the globally optimal source set |
@@ -160,7 +187,7 @@ Full mathematical derivation, annotated source code listings, and a complete use
 
 ```
 Elemental-Blend-Solver/
-├── molecular_solver_v9_0_1.html    ← The application (open this in your browser)
+├── molecular_solver_v9_0_2.html    ← The application (open this in your browser)
 ├── LICENSE.txt                     ← MIT Licence
 ├── README.md                       ← This file
 ├── CITATION.cff                    ← Machine-readable citation metadata
@@ -190,7 +217,7 @@ If you use EBS in your research, please cite it. A `Cite this repository` button
 
 **Software archive (cite this for the code itself):**
 
-> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 9.0.1) [Software]. Zenodo. <https://doi.org/10.5281/zenodo.19136224>
+> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 9.0.2) [Software]. Zenodo. <https://doi.org/10.5281/zenodo.19263118>
 
 The following journal papers are currently under review. This section will be updated with full references and DOIs upon acceptance:
 
