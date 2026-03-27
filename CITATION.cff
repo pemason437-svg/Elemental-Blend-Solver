@@ -2,10 +2,13 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
 type: software
 title: "Elemental Blend Solver (EBS)"
-version: "9.0.1"
-date-released: "2026-03-20"
-doi: "10.5281/zenodo.19136224"
+version: "9.0.2"
+date-released: "2026-03-27"
+doi: "10.5281/zenodo.19263118"
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19263118"
+    description: "Zenodo software archive DOI (v9.0.2)"
   - type: doi
     value: "10.5281/zenodo.19136224"
     description: "Zenodo software archive DOI (v9.0.1)"
@@ -18,16 +21,17 @@ abstract: >
   of up to five source polymers whose combined elemental weight fractions best
   approximate a target molecule. Supports 20 elements and a 73-polymer database.
   Includes seven graphical analysis views and eight advanced diagnostic tools.
-  Version 9.0.1 fixes a critical visual bug in the PCA Coverage Map where the
-  target star was incorrectly placed inside the source convex hull for compounds
-  with no exact solution. Introduces a 3-state star colour system driven by
-  global NNLS over all 73 database polymers: green = exact match found with
-  current sources; amber = exact solution exists in the database but not with
-  current source selection; red = no database solution possible, star pushed
-  outside the hull. Also fixes PCA axis bias caused by including the target in
-  the covariance matrix, and corrects a sign error in the ray-hull intersection
-  formula (Cramers rule, sEdge denominator) that prevented the star from being
-  pushed outside the hull.
+  Version 9.0.2 fixes the 43% false-positive rate of the Global Decomposability
+  Score (GDS) classifier. The GDS scalar formula is unchanged; the binary
+  GDS > 0.97 threshold is replaced by a 5-tier absolute RMSE classifier in
+  percentage-point (pp) units grounded in CHN/XRF instrument noise floors:
+  Exact (SSR < 1e-8), Noise-floor (RMSE < 0.5 pp and max residual < 1.0 pp),
+  Acceptable (RMSE < 2.0 pp), Marginal (RMSE < 5.0 pp), Poor (RMSE >= 5.0 pp).
+  Validated against 90 test cases (30 molecules x 3 source sets): 0% false-
+  positive rate and 0% false-negative rate. The isExact threshold is tightened
+  from SSR < 1e-6 to SSR < 1e-8 to match the solver's actual floating-point
+  exact-zero threshold. Tier badges are surfaced in the GDS tool panel, inline
+  in the main result header alongside the chi-squared chip, and in the status bar.
 authors:
   - family-names: Mason
     given-names: Paul
