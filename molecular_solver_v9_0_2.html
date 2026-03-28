@@ -94,6 +94,8 @@
   .card-blue { border-color: var(--accent); cursor: pointer; }
   .section-label { font-size: 10px; color: var(--subtext); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin: 4px 0 0 2px; }
   .tag { display: inline-flex; align-items: center; gap: 3px; border-radius: 5px; padding: 2px 7px; font-size: 10.5px; font-family: 'Courier New', monospace; font-weight: 700; margin: 2px; white-space: nowrap; border: 1px solid; }
+  .elem-pill { color: #ffffff !important; }
+  :root.light .elem-pill { color: #000000 !important; }
   .fraction-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; padding: 10px 12px; background: var(--panel2); border-radius: 8px; }
   .bar-wrap { flex: 1; background: var(--surface2); border-radius: 3px; height: 5px; overflow: hidden; }
   .bar { height: 100%; border-radius: 3px; transition: width 0.4s; }
@@ -260,26 +262,26 @@
       <div style="margin-top:10px;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:9px 12px">
         <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtext);margin-bottom:7px">Supported Elements (20)</div>
         <div style="display:flex;flex-wrap:wrap;gap:4px">
-          <span title="Carbon · 12.011 g/mol"    style="background:#3b82f620;border:1px solid #3b82f660;color:#3b82f6;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">C</span>
-          <span title="Hydrogen · 1.008 g/mol"   style="background:#10b98120;border:1px solid #10b98160;color:#10b981;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">H</span>
-          <span title="Oxygen · 15.999 g/mol"    style="background:#f59e0b20;border:1px solid #f59e0b60;color:#f59e0b;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">O</span>
-          <span title="Nitrogen · 14.007 g/mol"  style="background:#8b5cf620;border:1px solid #8b5cf660;color:#8b5cf6;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">N</span>
-          <span title="Fluorine · 18.998 g/mol"  style="background:#06b6d420;border:1px solid #06b6d460;color:#06b6d4;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">F</span>
-          <span title="Chlorine · 35.45 g/mol"   style="background:#ec489920;border:1px solid #ec489960;color:#ec4899;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Cl</span>
-          <span title="Bromine · 79.904 g/mol"   style="background:#f9731620;border:1px solid #f9731660;color:#f97316;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Br</span>
-          <span title="Iodine · 126.904 g/mol"   style="background:#a855f720;border:1px solid #a855f760;color:#a855f7;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">I</span>
-          <span title="Sulfur · 32.06 g/mol"     style="background:#eab30820;border:1px solid #eab30860;color:#eab308;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">S</span>
-          <span title="Phosphorus · 30.974 g/mol" style="background:#84cc1620;border:1px solid #84cc1660;color:#84cc16;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">P</span>
-          <span title="Silicon · 28.086 g/mol"   style="background:#64748b20;border:1px solid #64748b60;color:#64748b;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Si</span>
-          <span title="Boron · 10.81 g/mol"      style="background:#f4364520;border:1px solid #f4364560;color:#f43645;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">B</span>
-          <span title="Sodium · 22.990 g/mol"    style="background:#38bdf820;border:1px solid #38bdf860;color:#38bdf8;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Na</span>
-          <span title="Potassium · 39.098 g/mol" style="background:#fb923c20;border:1px solid #fb923c60;color:#fb923c;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">K</span>
-          <span title="Magnesium · 24.305 g/mol" style="background:#2dd4bf20;border:1px solid #2dd4bf60;color:#2dd4bf;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Mg</span>
-          <span title="Calcium · 40.078 g/mol"   style="background:#a3e63520;border:1px solid #a3e63560;color:#a3e635;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Ca</span>
-          <span title="Iron · 55.845 g/mol"      style="background:#f8717120;border:1px solid #f8717160;color:#f87171;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Fe</span>
-          <span title="Aluminium · 26.982 g/mol" style="background:#94a3b820;border:1px solid #94a3b860;color:#94a3b8;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Al</span>
-          <span title="Selenium · 78.971 g/mol"  style="background:#c084fc20;border:1px solid #c084fc60;color:#c084fc;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Se</span>
-          <span title="Zinc · 65.38 g/mol"       style="background:#4ade8020;border:1px solid #4ade8060;color:#4ade80;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Zn</span>
+          <span class="elem-pill" title="Carbon · 12.011 g/mol"    style="background:#3b82f620;border:1px solid #3b82f660;color:#3b82f6;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">C</span>
+          <span class="elem-pill" title="Hydrogen · 1.008 g/mol"   style="background:#10b98120;border:1px solid #10b98160;color:#10b981;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">H</span>
+          <span class="elem-pill" title="Oxygen · 15.999 g/mol"    style="background:#f59e0b20;border:1px solid #f59e0b60;color:#f59e0b;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">O</span>
+          <span class="elem-pill" title="Nitrogen · 14.007 g/mol"  style="background:#8b5cf620;border:1px solid #8b5cf660;color:#8b5cf6;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">N</span>
+          <span class="elem-pill" title="Fluorine · 18.998 g/mol"  style="background:#06b6d420;border:1px solid #06b6d460;color:#06b6d4;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">F</span>
+          <span class="elem-pill" title="Chlorine · 35.45 g/mol"   style="background:#ec489920;border:1px solid #ec489960;color:#ec4899;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Cl</span>
+          <span class="elem-pill" title="Bromine · 79.904 g/mol"   style="background:#f9731620;border:1px solid #f9731660;color:#f97316;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Br</span>
+          <span class="elem-pill" title="Iodine · 126.904 g/mol"   style="background:#a855f720;border:1px solid #a855f760;color:#a855f7;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">I</span>
+          <span class="elem-pill" title="Sulfur · 32.06 g/mol"     style="background:#eab30820;border:1px solid #eab30860;color:#eab308;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">S</span>
+          <span class="elem-pill" title="Phosphorus · 30.974 g/mol" style="background:#84cc1620;border:1px solid #84cc1660;color:#84cc16;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">P</span>
+          <span class="elem-pill" title="Silicon · 28.086 g/mol"   style="background:#64748b20;border:1px solid #64748b60;color:#64748b;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Si</span>
+          <span class="elem-pill" title="Boron · 10.81 g/mol"      style="background:#f4364520;border:1px solid #f4364560;color:#f43645;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">B</span>
+          <span class="elem-pill" title="Sodium · 22.990 g/mol"    style="background:#38bdf820;border:1px solid #38bdf860;color:#38bdf8;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Na</span>
+          <span class="elem-pill" title="Potassium · 39.098 g/mol" style="background:#fb923c20;border:1px solid #fb923c60;color:#fb923c;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">K</span>
+          <span class="elem-pill" title="Magnesium · 24.305 g/mol" style="background:#2dd4bf20;border:1px solid #2dd4bf60;color:#2dd4bf;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Mg</span>
+          <span class="elem-pill" title="Calcium · 40.078 g/mol"   style="background:#a3e63520;border:1px solid #a3e63560;color:#a3e635;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Ca</span>
+          <span class="elem-pill" title="Iron · 55.845 g/mol"      style="background:#f8717120;border:1px solid #f8717160;color:#f87171;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Fe</span>
+          <span class="elem-pill" title="Aluminium · 26.982 g/mol" style="background:#94a3b820;border:1px solid #94a3b860;color:#94a3b8;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Al</span>
+          <span class="elem-pill" title="Selenium · 78.971 g/mol"  style="background:#c084fc20;border:1px solid #c084fc60;color:#c084fc;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Se</span>
+          <span class="elem-pill" title="Zinc · 65.38 g/mol"       style="background:#4ade8020;border:1px solid #4ade8060;color:#4ade80;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace">Zn</span>
         </div>
         <div style="font-size:9px;color:var(--subtext);margin-top:6px">Hover for atomic weight · Formula parser accepts any combination · Foreign elements (not in target) are blocked from sources</div>
       </div>
@@ -813,7 +815,7 @@ function renderTagEl(el, val) {
   const dot = EL_COLOR[el] || '#94a3b8';
   const isLight = document.documentElement.classList.contains('light');
   const bg = isLight ? dot+'22' : dot+'1a';
-  const fg = isLight ? dot.replace(/..$/,'cc') : dot+'cc';
+  const fg = isLight ? '#000000' : '#ffffff';
   return `<span class="tag" style="background:${bg};color:${fg};border-color:${dot}55">
     <span style="width:5px;height:5px;border-radius:50%;background:${dot};display:inline-block"></span>
     ${el}${val!==undefined?`<span style="opacity:0.7;font-weight:400"> ${(val*100).toFixed(2)}%</span>`:''}
