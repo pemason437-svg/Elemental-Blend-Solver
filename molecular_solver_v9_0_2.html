@@ -848,8 +848,8 @@ function updateStatusBar(res) {
       : tier==='Acceptable'
         ? `~ Acceptable fit — small residuals (RMSE ${gd?gd.rmse_pp.toFixed(2):'?'} pp) · max error: ${maxErrStr}%`
         : tier==='Marginal'
-          ? `! Marginal fit — RMSE ${gd?gd.rmse_pp.toFixed(2):'?'} pp · run Substitution Recommender`
-          : `✗ Poor fit — no exact solution exists · max error: ${maxErrStr}% · run Exhaustive Search`;
+          ? `! Marginal fit — RMSE ${gd?gd.rmse_pp.toFixed(2):'?'} pp`
+          : `✗ Poor fit — no exact solution exists · max error: ${maxErrStr}%`;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
