@@ -141,10 +141,11 @@ The star in the PCA scatter plot now encodes global blend feasibility using colo
 | Convergence Plot | Illustrative projected-gradient descent (not the actual solver path) |
 | Composition | Side-by-side target vs achieved bar chart with foreign-element annotation |
 
-### Advanced Diagnostic Tools (8 tools)
+### Advanced Diagnostic Tools (9 tools)
 
 | Tool | Description |
 | --- | --- |
+| Solution Space Explorer | Characterises whether the exact blend solution is unique or spans a polytope; reports per-source fraction ranges across all valid solutions |
 | Monte Carlo Sensitivity | Propagates source-composition uncertainty to mixing-fraction confidence intervals (2,000 replicates, σ = 2% multiplicative noise) |
 | Distance-to-Hull | L₂ distance from target to nearest point on source convex hull |
 | Substitution Recommender | Scans all 73 database polymers for single-polymer replacements that reduce SSR |
@@ -221,9 +222,7 @@ If you use EBS in your research, please cite it. A `Cite this repository` button
 
 The following journal papers are currently under review. This section will be updated with full references and DOIs upon acceptance:
 
-> **Mason, P.** (forthcoming). Elemental Blend Solver: A Browser-Native Non-Negative Least Squares Framework for Polymer Elemental Composition Reconstruction. *Chemometrics and Intelligent Laboratory Systems.*
-
-> **Mason, P.** (forthcoming). Elemental Blend Solver (EBS): A Browser-Based Non-Negative Least Squares Tool for Polymer Elemental Composition Matching. *Journal of Open Source Software.*
+> **Mason, P.** (forthcoming). Elemental Blend Solver: An Open-Source Browser Tool for Polymer Blend Identification by Non-Negative Least Squares. *Chemometrics and Intelligent Laboratory Systems.*
 
 ---
 
