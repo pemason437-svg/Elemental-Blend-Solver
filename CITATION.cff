@@ -50,18 +50,10 @@ keywords:
   - browser-based software
 references:
   - type: article
-    title: "Elemental Blend Solver: A Browser-Native Non-Negative Least Squares Framework for Polymer Elemental Composition Reconstruction"
+    title: "Elemental Blend Solver: An Open-Source Browser Tool for Polymer Blend Identification by Non-Negative Least Squares"
     authors:
       - family-names: Mason
         given-names: Paul
     journal: "Chemometrics and Intelligent Laboratory Systems"
-    year: forthcoming
-    notes: "Manuscript submitted for publication"
-  - type: article
-    title: "Elemental Blend Solver (EBS): A Browser-Based Non-Negative Least Squares Tool for Polymer Elemental Composition Matching"
-    authors:
-      - family-names: Mason
-        given-names: Paul
-    journal: "Journal of Open Source Software"
     year: forthcoming
     notes: "Manuscript submitted for publication"
