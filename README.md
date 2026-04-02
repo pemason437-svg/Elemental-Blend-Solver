@@ -179,8 +179,8 @@ Full mathematical derivation, annotated source code listings, and a complete use
 
 | Document | Description |
 | --- | --- |
-| **[EBS\_User\_Guide\_v9\_0\_0.docx](docs/EBS_User_Guide_v9_0_0.docx)** | Complete technical reference and user guide. Covers quick-start, all UI features, full mathematical framework with annotated JavaScript code listings, advanced tool documentation (including corrected χ² df = m − n_active and GDS formula), troubleshooting, glossary, and software verification report. |
-| **[Math\_used\_in\_the\_molecular\_solver\_code\_v9\_0\_0.docx](docs/Math_used_in_the_molecular_solver_code_v9_0_0.docx)** | Detailed mathematical derivations underpinning the solver code. Covers the NNLS formulation, Lawson–Hanson active-set algorithm, sum constraint penalty, corrected chi-squared degrees of freedom (df = m − n_active), Global Decomposability Score (GDS = max(0, 1 − RMSE/‖b‖₂)), and all supporting calculations used in the implementation. |
+| **[EBS\_User\_Guide\_v9\_0\_2.docx](docs/EBS_User_Guide_v9_0_2.docx)** | Complete technical reference and user guide (Word format). Covers quick-start, all UI features, full mathematical framework, advanced tool documentation (including corrected χ² df = m − n_active, GDS formula, Diagnostic Advisor, Solution Space Explorer, and 5-tier RMSE classifier), troubleshooting, glossary, and software verification report. |
+| **[EBS\_User\_Guide\_v9\_0\_2.pdf](docs/EBS_User_Guide_v9_0_2.pdf)** | PDF version of the complete technical reference and user guide. Identical content to the .docx above — use this for reading, sharing, or printing without requiring a Word processor. |
 
 ---
 
@@ -193,8 +193,8 @@ Elemental-Blend-Solver/
 ├── README.md                       ← This file
 ├── CITATION.cff                    ← Machine-readable citation metadata
 ├── docs/
-│   ├── EBS_User_Guide_v9_0_0.docx                        ← Complete user guide and technical reference
-│   └── Math_used_in_the_molecular_solver_code_v9_0_0.docx ← Mathematical derivations for the solver code
+│   ├── EBS_User_Guide_v9_0_2.docx  ← Complete user guide and technical reference (Word)
+│   └── EBS_User_Guide_v9_0_2.pdf   ← Complete user guide and technical reference (PDF)
 └── paper/                          ← Journal paper source files
 ```
 
