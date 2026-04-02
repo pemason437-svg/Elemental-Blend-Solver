@@ -1,4 +1,4 @@
-# Elemental Blend Solver (EBS) v9.0.2
+# Elemental Blend Solver: An Open-Source Browser Tool for Polymer Blend Identification by Non-Negative Least Squares
 
 **A browser-native, zero-install NNLS solver for polymer elemental composition matching.**
 
@@ -179,8 +179,7 @@ Full mathematical derivation, annotated source code listings, and a complete use
 
 | Document | Description |
 | --- | --- |
-| **[EBS\_User\_Guide\_v9\_0\_2.docx](docs/EBS_User_Guide_v9_0_2.docx)** | Complete technical reference and user guide (Word format). Covers quick-start, all UI features, full mathematical framework, advanced tool documentation (including corrected χ² df = m − n_active, GDS formula, Diagnostic Advisor, Solution Space Explorer, and 5-tier RMSE classifier), troubleshooting, glossary, and software verification report. |
-| **[EBS\_User\_Guide\_v9\_0\_2.pdf](docs/EBS_User_Guide_v9_0_2.pdf)** | PDF version of the complete technical reference and user guide. Identical content to the .docx above — use this for reading, sharing, or printing without requiring a Word processor. |
+| **[EBS\_User\_Guide\_v9\_0\_2.pdf](docs/EBS_User_Guide_v9_0_2.pdf)** | Complete technical reference and user guide. Covers quick-start, all UI features, full mathematical framework, advanced tool documentation (including corrected χ² df = m − n_active, GDS formula, Diagnostic Advisor, Solution Space Explorer, and 5-tier RMSE classifier), troubleshooting, glossary, and software verification report. |
 
 ---
 
@@ -193,8 +192,7 @@ Elemental-Blend-Solver/
 ├── README.md                       ← This file
 ├── CITATION.cff                    ← Machine-readable citation metadata
 ├── docs/
-│   ├── EBS_User_Guide_v9_0_2.docx  ← Complete user guide and technical reference (Word)
-│   └── EBS_User_Guide_v9_0_2.pdf   ← Complete user guide and technical reference (PDF)
+│   └── EBS_User_Guide_v9_0_2.pdf   ← Complete user guide and technical reference
 └── paper/                          ← Journal paper source files
 ```
 
