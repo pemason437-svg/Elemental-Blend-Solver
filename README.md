@@ -3,9 +3,9 @@
 **A browser-native, zero-install NNLS solver for polymer elemental composition matching.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver/blob/main/LICENSE.txt)
-[![Version](https://img.shields.io/badge/version-9.0.2-blue.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
+[![Version](https://img.shields.io/badge/version-9.1.1-blue.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
 [![No Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](https://github.com/pemason437-svg/Elemental-Blend-Solver)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19263118.svg)](https://doi.org/10.5281/zenodo.19263118)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20818128.svg)](https://doi.org/10.5281/zenodo.20818128)
 
 ---
 
@@ -23,12 +23,38 @@ Typical use cases include:
 
 ## How to Run
 
-1. Download **`molecular_solver_v9_0_2.html`** to any folder on your computer
+1. Download **`molecular_solver_v9_1_1.html`** to any folder on your computer
 2. Double-click it to open in your browser
 
 That's it. No installation, no npm, no Python, no internet connection required. The entire application — solver, database, charts, and export — is contained in the single HTML file.
 
 **Tested browsers:** Chrome ≥ 80, Edge ≥ 80, Firefox ≥ 78, Safari ≥ 14
+
+---
+
+## What's New in v9.1.1
+
+v9.1.1 retains the Lawson–Hanson NNLS core and all existing graphical and diagnostic tools, and adds a blind-search front end, a statistical tie-breaker for equivalent blends, a ranking-order fix, and collapsible interface sections.
+
+### Blind search is now the default workflow
+
+- The **Automatic Blend Finder** is promoted to the top of the page, directly above the target card. It finds the best blend from the **target composition alone**, with no candidate sources supplied — searching the full eligible database and auto-selecting the blend cardinality (≤ 5) by parsimony. It renders on load and stays available in the zero-source state.
+- Three actions: **One-click best blend** (search and apply), **Best blend list** (parsimony-ranked candidates, each applied with one click), and **Exhaustive database search** (full enumeration that certifies the result at its cardinality, with per-row Apply).
+
+### Tie-breaking among statistically equivalent blends
+
+- When several blends fit within modelled measurement noise (equal SSR at display precision), the ranked list, the exhaustive table, and the recommended pick are ordered by **fraction-stability CV%** — the maximum coefficient of variation of the mixing fractions under ±2% composition noise (lower = more robust). This supplies a discriminating secondary criterion where the residual alone is degenerate, alongside a report of how many distinct blends fall within the noise floor and which members are elementally interchangeable.
+
+### Ranking correctness
+
+- Fixed a latent fault in which a higher-cardinality blend could be promoted above a parsimony-minimal blend at equal SSR. Ranking is now **parsimony first**, then SSR (at display precision), then CV%.
+
+### Collapsible sections (native HTML, no scripts)
+
+Sections expand and collapse via the browser's native `<details>` disclosure:
+
+- **Expanded by default:** Diagnostic Advisor, the metric-conflict note ("why these metrics disagree"), Supported Elements, and the Elemental Weight-Fraction Comparison table.
+- **Collapsed by default:** the page description (under the title) and the Automatic Blend Finder description.
 
 ---
 
@@ -187,7 +213,7 @@ Full mathematical derivation, annotated source code listings, and a complete use
 
 ```
 Elemental-Blend-Solver/
-├── molecular_solver_v9_0_2.html    ← The application (open this in your browser)
+├── molecular_solver_v9_1_1.html    ← The application (open this in your browser)
 ├── LICENSE.txt                     ← MIT Licence
 ├── README.md                       ← This file
 ├── CITATION.cff                    ← Machine-readable citation metadata
@@ -216,7 +242,7 @@ If you use EBS in your research, please cite it. A `Cite this repository` button
 
 **Software archive (cite this for the code itself):**
 
-> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 9.0.2) [Software]. Zenodo. <https://doi.org/10.5281/zenodo.19263118>
+> Mason, P. (2026). *Elemental Blend Solver (EBS)* (Version 9.1.1) [Software]. Zenodo. <https://doi.org/10.5281/zenodo.20818128>
 
 The following journal papers are currently under review. This section will be updated with full references and DOIs upon acceptance:
 
