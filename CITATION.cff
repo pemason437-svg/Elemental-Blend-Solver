@@ -2,10 +2,13 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
 type: software
 title: "Elemental Blend Solver (EBS)"
-version: "9.0.2"
-date-released: "2026-03-27"
-doi: "10.5281/zenodo.19263118"
+version: "9.1.1"
+date-released: "2026-06-23"
+doi: "10.5281/zenodo.20818128"
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20818128"
+    description: "Zenodo software archive DOI (v9.1.1)"
   - type: doi
     value: "10.5281/zenodo.19263118"
     description: "Zenodo software archive DOI (v9.0.2)"
@@ -17,21 +20,23 @@ identifiers:
     description: "Zenodo software archive DOI (v9.0.0)"
 abstract: >
   A browser-native, zero-install Non-Negative Least Squares (NNLS) solver for
-  polymer elemental composition matching. Computes optimal mass-mixing fractions
-  of up to five source polymers whose combined elemental weight fractions best
-  approximate a target molecule. Supports 20 elements and a 73-polymer database.
-  Includes seven graphical analysis views and eight advanced diagnostic tools.
-  Version 9.0.2 fixes the 43% false-positive rate of the Global Decomposability
-  Score (GDS) classifier. The GDS scalar formula is unchanged; the binary
-  GDS > 0.97 threshold is replaced by a 5-tier absolute RMSE classifier in
-  percentage-point (pp) units grounded in CHN/XRF instrument noise floors:
-  Exact (SSR < 1e-8), Noise-floor (RMSE < 0.5 pp and max residual < 1.0 pp),
-  Acceptable (RMSE < 2.0 pp), Marginal (RMSE < 5.0 pp), Poor (RMSE >= 5.0 pp).
-  Validated against 90 test cases (30 molecules x 3 source sets): 0% false-
-  positive rate and 0% false-negative rate. The isExact threshold is tightened
-  from SSR < 1e-6 to SSR < 1e-8 to match the solver's actual floating-point
-  exact-zero threshold. Tier badges are surfaced in the GDS tool panel, inline
-  in the main result header alongside the chi-squared chip, and in the status bar.
+  polymer elemental composition matching. Given a target molecule's elemental
+  weight fractions, it computes the optimal mass-mixing fractions of up to five
+  source polymers via the Lawson-Hanson active-set algorithm (fractions
+  non-negative and summing to one). Supports 20 elements and a 73-polymer
+  database, with seven graphical analysis views and a suite of advanced
+  diagnostic tools. Version 9.1.1 makes blind search the default workflow: an
+  Automatic Blend Finder identifies the best blend from the target composition
+  alone, with no candidate sources supplied, using a beam plus local-swap search
+  over the eligible database with parsimony-based cardinality selection. Among
+  blends that are statistically equivalent within modelled measurement noise
+  (equal sum of squared residuals), candidates are ranked by a fraction-stability
+  criterion, the maximum coefficient of variation of the mixing fractions under
+  +/-2% composition noise, providing a discriminating secondary criterion where
+  the residual alone is degenerate. The release also corrects a ranking fault so
+  that parsimony-minimal blends are not displaced at equal residual, and adds
+  collapsible interface sections. The NNLS core and the existing analysis tools
+  are retained from prior versions.
 authors:
   - family-names: Mason
     given-names: Paul
