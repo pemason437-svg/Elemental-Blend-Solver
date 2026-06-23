@@ -205,7 +205,7 @@ Full mathematical derivation, annotated source code listings, and a complete use
 
 | Document | Description |
 | --- | --- |
-| **[EBS\_User\_Guide\_v9\_0\_2.pdf](docs/EBS_User_Guide_v9_0_2.pdf)** | Complete technical reference and user guide. Covers quick-start, all UI features, full mathematical framework, advanced tool documentation (including corrected χ² df = m − n_active, GDS formula, Diagnostic Advisor, Solution Space Explorer, and 5-tier RMSE classifier), troubleshooting, glossary, and software verification report. |
+| **[EBS\_User\_Guide\_v9\_1\_1.pdf](https://github.com/pemason437-svg/Elemental-Blend-Solver/blob/main/docs/EBS_User_Guide_v9_1_1.pdf)** | Complete technical reference and user guide. Covers quick-start, all UI features, full mathematical framework, advanced tool documentation (including corrected χ² df = m − n_active, GDS formula, Diagnostic Advisor, Solution Space Explorer, and 5-tier RMSE classifier), troubleshooting, glossary, and software verification report. |
 
 ---
 
@@ -218,7 +218,7 @@ Elemental-Blend-Solver/
 ├── README.md                       ← This file
 ├── CITATION.cff                    ← Machine-readable citation metadata
 ├── docs/
-│   └── EBS_User_Guide_v9_0_2.pdf   ← Complete user guide and technical reference
+│   └── EBS_User_Guide_v9_1_1.pdf   ← Complete user guide and technical reference
 └── paper/                          ← Journal paper source files
 ```
 
